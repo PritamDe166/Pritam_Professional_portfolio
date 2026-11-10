@@ -6,3 +6,5 @@
 *.tfplan
 *.pem
 node_modules/
+.fuse_hidden*
+*.tmp.html
