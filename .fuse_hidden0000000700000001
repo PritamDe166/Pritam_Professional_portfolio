@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pritam De | Principal Software Engineer</title>
+  <meta name="description" content="Pritam De — Principal Software Engineer with 12+ years building scalable, reliable enterprise applications with .NET, microservices and AWS.">
+  <meta name="author" content="Pritam De">
+  <meta name="theme-color" content="#09090b">
+  <meta property="og:title" content="Pritam De | Principal Software Engineer">
+  <meta property="og:description" content="Building scalable and reliable enterprise applications.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-white font-sans text-zinc-900 antialiased">
+
+<!-- ============================== NAV ============================== -->
+<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent border-b border-transparent">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      <a href="#home" class="flex items-center text-2xl font-extrabold tracking-tight text-white" aria-label="Pritam De — home">
+        Pritam De<span class="text-emerald-400">.</span>
+      </a>
+      <div class="hidden lg:flex space-x-7 items-center">
+        <a href="#home" class="nav-link capitalize text-sm font-medium transition-colors duration-200 border-b-2 pb-1 text-zinc-300 hover:text-white border-transparent">home</a>
+        <a href="#about" class="nav-link capitalize text-sm font-medium transition-colors duration-200 border-b-2 pb-1 text-zinc-300 hover:text-white border-transparent">about</a>
+        <a href="#technologies" class="nav-link capitalize text-sm font-medium transition-colors duration-200 border-b-2 pb-1 text-zinc-300 hover:text-white border-transparent">technologies</a>
+        <a href="#experience" class="nav-link capitalize text-sm font-medium transition-colors duration-200 border-b-2 pb-1 text-zinc-300 hover:text-white border-transparent">experience</a>
+        <a href="#articles" class="nav-link capitalize text-sm font-medium transition-colors duration-200 border-b-2 pb-1 text-zinc-300 hover:text-white border-transparent">articles</a>
+        <a href="#github" class="nav-link text-sm font-medium transition-colors duration-200 border-b-2 pb-1 text-zinc-300 hover:text-white border-transparent">GitHub</a>
+        <a href="#contact" class="nav-link capitalize text-sm font-medium transition-colors duration-200 border-b-2 pb-1 text-zinc-300 hover:text-white border-transparent">contact</a>
+      </div>
+      <button id="menu-toggle" class="lg:hidden text-white" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </div>
+  <!-- mobile menu -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-zinc-950/95 backdrop-blur-md border-t border-zinc-800">
+    <div class="px-4 py-4 space-y-1">
+      <a href="#home" class="block capitalize py-2 text-zinc-300 hover:text-emerald-400">home</a>
+      <a href="#about" class="block capitalize py-2 text-zinc-300 hover:text-emerald-400">about</a>
+      <a href="#technologies" class="block capitalize py-2 text-zinc-300 hover:text-emerald-400">technologies</a>
+      <a href="#experience" class="block capitalize py-2 text-zinc-300 hover:text-emerald-400">experience</a>
+      <a href="#articles" class="block capitalize py-2 text-zinc-300 hover:text-emerald-400">articles</a>
+      <a href="#github" class="block py-2 text-zinc-300 hover:text-emerald-400">GitHub</a>
+      <a href="#contact" class="block capitalize py-2 text-zinc-300 hover:text-emerald-400">contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================== HERO ============================== -->
+<section id="home" class="lg:h-dvh lg:min-h-[640px] flex items-center relative overflow-hidden bg-zinc-950 pb-16 lg:pb-0">
+  <!-- right-side code panel (replace with a photo later if you like: assets/img/hero.jpg) -->
+  <div class="hidden lg:block absolute inset-y-0 right-0 w-1/2 overflow-hidden animate-[fadeIn_1.2s_ease-out_backwards]" aria-hidden="true">
+    <div class="absolute inset-0 code-backdrop">
+      <pre class="font-mono text-[14px] leading-8 text-zinc-300 pt-32 pl-44 select-none"><span class="text-zinc-600"> 1</span>  <span class="text-sky-400">public sealed class</span> <span class="text-emerald-300">OrderService</span> : <span class="text-emerald-300">IOrderService</span>
+<span class="text-zinc-600"> 2</span>  {
+<span class="text-zinc-600"> 3</span>      <span class="text-sky-400">private readonly</span> <span class="text-emerald-300">IOrderRepository</span> _orders;
+<span class="text-zinc-600"> 4</span>      <span class="text-sky-400">private readonly</span> <span class="text-emerald-300">ILogger</span>&lt;<span class="text-emerald-300">OrderService</span>&gt; _logger;
+<span class="text-zinc-600"> 5</span>
+<span class="text-zinc-600"> 6</span>      <span class="text-sky-400">public async</span> <span class="text-emerald-300">Task</span>&lt;<span class="text-emerald-300">Result</span>&gt; <span class="text-amber-300">PlaceAsync</span>(<span class="text-emerald-300">Order</span> order,
+<span class="text-zinc-600"> 7</span>          <span class="text-emerald-300">CancellationToken</span> ct)
+<span class="text-zinc-600"> 8</span>      {
+<span class="text-zinc-600"> 9</span>          <span class="text-zinc-600">// validate early, fail fast</span>
+<span class="text-zinc-600">10</span>          <span class="text-sky-400">if</span> (!order.<span class="text-amber-300">IsValid</span>(<span class="text-sky-400">out var</span> errors))
+<span class="text-zinc-600">11</span>              <span class="text-sky-400">return</span> <span class="text-emerald-300">Result</span>.<span class="text-amber-300">Fail</span>(errors);
+<span class="text-zinc-600">12</span>
+<span class="text-zinc-600">13</span>          <span class="text-sky-400">await</span> _orders.<span class="text-amber-300">AddAsync</span>(order, ct);
+<span class="text-zinc-600">14</span>          _logger.<span class="text-amber-300">LogInformation</span>(<span class="text-orange-300">"Order {Id} placed"</span>, order.Id);
+<span class="text-zinc-600">15</span>
+<span class="text-zinc-600">16</span>          <span class="text-sky-400">return</span> <span class="text-emerald-300">Result</span>.<span class="text-amber-300">Ok</span>();
+<span class="text-zinc-600">17</span>      }
+<span class="text-zinc-600">18</span>  }
+<span class="text-zinc-600">19</span>
+<span class="text-zinc-600">20</span>  <span class="text-zinc-600">// infra/main.tf</span>
+<span class="text-zinc-600">21</span>  <span class="text-sky-400">resource</span> <span class="text-orange-300">"aws_ecs_service"</span> <span class="text-orange-300">"api"</span> {
+<span class="text-zinc-600">22</span>    name            = <span class="text-orange-300">"orders-api"</span>
+<span class="text-zinc-600">23</span>    desired_count   = <span class="text-amber-300">3</span>
+<span class="text-zinc-600">24</span>    launch_type     = <span class="text-orange-300">"FARGATE"</span>
+<span class="text-zinc-600">25</span>  }</pre>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-r from-zinc-950 from-0% via-zinc-950/30 via-50% to-transparent"></div>
+  </div>
+
+  <div class="relative z-10 w-full pt-28 lg:pt-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="text-center lg:text-left">
+        <h1 class="mb-3 text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-tighter text-white animate-[fadeInUp_0.8s_ease-out_0.1s_backwards]">
+          Pritam De<span class="text-emerald-400">.</span>
+        </h1>
+        <p class="text-xl sm:text-2xl text-emerald-400 font-semibold mb-6 animate-[fadeInUp_0.8s_ease-out_0.25s_backwards]">
+          Principal Software Engineer ▪ Clean Systems ▪ Scalable Software
+        </p>
+        <p class="text-lg text-zinc-300 mb-8 italic max-w-xl mx-auto lg:mx-0 animate-[fadeInUp_0.8s_ease-out_0.4s_backwards]">
+          "I build reliable enterprise applications, solve complex technical problems, and help teams turn good ideas into production-ready systems."
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8 animate-[fadeInUp_0.8s_ease-out_0.55s_backwards]">
+          <a href="#github" class="bg-emerald-500 hover:bg-emerald-400 text-white px-8 py-3 rounded-[5px] font-semibold transition-all duration-200 transform hover:scale-105 inline-flex items-center gap-2">
+            View My Work <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+          <a href="#contact" class="border-2 border-zinc-700 text-white hover:border-white px-8 py-3 rounded-[5px] font-semibold transition-all duration-200">
+            Contact Me
+          </a>
+        </div>
+        <div class="flex flex-wrap gap-x-6 gap-y-3 justify-center lg:justify-start animate-[fadeInUp_0.8s_ease-out_0.7s_backwards]">
+          <a href="https://github.com/PritamDe166" target="_blank" rel="noopener" class="flex items-center gap-2.5 text-zinc-300 hover:text-white hover:-translate-y-0.5 transition-all duration-300 ease-in-out">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            <span class="text-base font-medium">GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/pritam-d-93459a199/" target="_blank" rel="me noopener" class="flex items-center gap-2.5 text-zinc-300 hover:text-white hover:-translate-y-0.5 transition-all duration-300 ease-in-out">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <span class="text-base font-medium">LinkedIn</span>
+          </a>
+          <a href="mailto:pritamde166@gmail.com" class="flex items-center gap-2.5 text-zinc-300 hover:text-white hover:-translate-y-0.5 transition-all duration-300 ease-in-out">
+            <i data-lucide="mail" class="w-6 h-6"></i>
+            <span class="text-base font-medium">Email</span>
+          </a>
+        </div>
+      </div>
+      <div class="hidden lg:block"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ABOUT ============================== -->
+<section id="about" class="py-20 bg-white border-t border-zinc-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center">
+      <div class="reveal">
+        <p class="text-emerald-600 font-semibold tracking-wide uppercase text-sm mb-3">About Me</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-zinc-900 mb-6">Engineering with purpose,<br>built to last.</h2>
+        <div class="space-y-4">
+          <p class="text-zinc-600 leading-relaxed">
+            I'm a <strong class="text-zinc-800">Principal Software Engineer</strong> with <strong class="text-zinc-800">12+ years of experience</strong> building enterprise-scale software, most recently in <strong class="text-zinc-800">healthcare technology</strong>. I work across architecture, APIs, microservices, databases and distributed systems.
+          </p>
+          <p class="text-zinc-600 leading-relaxed">
+            My focus is software that stays secure, understandable and reliable as it grows. Outside of delivery, I enjoy mentoring engineers, exploring <strong class="text-zinc-800">AWS</strong>, and sharing the lessons behind the systems I build.
+          </p>
+        </div>
+        <div class="grid grid-cols-3 gap-4 pt-8">
+          <div>
+            <i data-lucide="lightbulb" class="w-6 h-6 text-emerald-600 mb-2"></i>
+            <h4 class="font-semibold text-zinc-900 text-sm mb-1">Problem Solver</h4>
+            <p class="text-xs text-zinc-500">Turning complex requirements into simple, workable designs.</p>
+          </div>
+          <div class="pl-4 border-l border-zinc-200">
+            <i data-lucide="code" class="w-6 h-6 text-emerald-600 mb-2"></i>
+            <h4 class="font-semibold text-zinc-900 text-sm mb-1">Clean Code</h4>
+            <p class="text-xs text-zinc-500">Maintainable, testable code that scales with the team.</p>
+          </div>
+          <div class="pl-4 border-l border-zinc-200">
+            <i data-lucide="users" class="w-6 h-6 text-emerald-600 mb-2"></i>
+            <h4 class="font-semibold text-zinc-900 text-sm mb-1">Team Lead</h4>
+            <p class="text-xs text-zinc-500">Mentoring engineers and growing technical leadership.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Portrait: source is assets/img/about.jpg; resized copies are about-640/1100 (.webp + .jpg fallback) -->
+      <figure class="reveal [animation-delay:0.4s] relative mx-auto w-full max-w-md md:max-w-none pr-4 pb-4 sm:pr-5 sm:pb-5">
+        <!-- dot-grid accent -->
+        <div class="about-dots absolute -top-6 -left-6 w-28 h-28 hidden sm:block" aria-hidden="true"></div>
+        <!-- offset frame -->
+        <div class="absolute top-4 left-4 sm:top-5 sm:left-5 right-0 bottom-0 rounded-2xl border-2 border-emerald-500/50" aria-hidden="true"></div>
+
+        <div class="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-zinc-200 shadow-2xl shadow-zinc-900/20">
+          <picture>
+            <source type="image/webp" srcset="assets/img/about-640.webp 640w, assets/img/about-1100.webp 1100w" sizes="(min-width: 768px) 45vw, 90vw">
+            <img src="assets/img/about-1100.jpg" alt="Portrait of Pritam De" width="1100" height="1375" loading="lazy" decoding="async"
+                 class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]">
+          </picture>
+          <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-zinc-950/85 via-zinc-950/30 to-transparent" aria-hidden="true"></div>
+          <figcaption class="absolute left-5 right-5 bottom-5 sm:left-7 sm:bottom-7 text-white">
+            <p class="font-mono text-emerald-400 text-xs sm:text-sm mb-1">$ whoami</p>
+            <p class="text-xl sm:text-2xl font-bold leading-tight">Pritam De</p>
+            <p class="text-zinc-300 text-sm mt-0.5">.NET · Microservices · System Design · AWS</p>
+          </figcaption>
+        </div>
+
+        <!-- floating experience card -->
+        <div class="absolute -left-2 sm:-left-8 top-8 sm:top-12 flex items-center gap-3 bg-white/95 backdrop-blur rounded-xl border border-zinc-100 shadow-xl px-4 py-3">
+          <span class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 grid place-items-center"><i data-lucide="briefcase" class="w-5 h-5"></i></span>
+          <span>
+            <span class="block text-2xl font-extrabold text-zinc-900 leading-none">12+</span>
+            <span class="block text-xs text-zinc-500 mt-1">Years building software</span>
+          </span>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TECHNOLOGIES ============================== -->
+<section id="technologies" class="py-20 bg-zinc-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-16 reveal">
+      <p class="text-emerald-600 font-semibold tracking-wide uppercase text-sm mb-3">Technologies</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-zinc-900 mb-4">Technologies I Work With</h2>
+      <p class="text-zinc-600 max-w-2xl">The tools and practices I use to build dependable software, from application code to cloud infrastructure.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="tech-card bg-white p-6 rounded-[5px] border border-zinc-200 reveal transition-[translate,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <div class="flex items-center gap-3 mb-4"><i data-lucide="code" class="w-5 h-5 text-emerald-600"></i><h3 class="text-lg font-semibold text-zinc-900">Languages</h3></div>
+        <div class="flex flex-wrap gap-2">
+          <span class="tech-badge" style="--c:#68217A"><i data-lucide="hash" class="w-3.5 h-3.5"></i>C#</span>
+          <span class="tech-badge" style="--c:#CC2927"><i data-lucide="database" class="w-3.5 h-3.5"></i>SQL</span>
+          <span class="tech-badge" style="--c:#C99A00"><img src="assets/icons/javascript.svg" alt="" class="w-3.5 h-3.5">JavaScript</span>
+          <span class="tech-badge" style="--c:#E34F26"><img src="assets/icons/html5.svg" alt="" class="w-3.5 h-3.5">HTML</span>
+          <span class="tech-badge" style="--c:#663399"><img src="assets/icons/css.svg" alt="" class="w-3.5 h-3.5">CSS</span>
+        </div>
+      </div>
+      <div class="tech-card bg-white p-6 rounded-[5px] border border-zinc-200 reveal transition-[translate,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <div class="flex items-center gap-3 mb-4"><i data-lucide="server" class="w-5 h-5 text-emerald-600"></i><h3 class="text-lg font-semibold text-zinc-900">Frameworks</h3></div>
+        <div class="flex flex-wrap gap-2">
+          <span class="tech-badge" style="--c:#512BD4"><img src="assets/icons/dotnet.svg" alt="" class="w-3.5 h-3.5">.NET</span>
+          <span class="tech-badge" style="--c:#512BD4"><img src="assets/icons/dotnet.svg" alt="" class="w-3.5 h-3.5">ASP.NET Core</span>
+          <span class="tech-badge" style="--c:#0EA5E9"><i data-lucide="plug" class="w-3.5 h-3.5"></i>REST APIs</span>
+          <span class="tech-badge" style="--c:#512BD4"><i data-lucide="layers" class="w-3.5 h-3.5"></i>Entity Framework</span>
+        </div>
+      </div>
+      <div class="tech-card bg-white p-6 rounded-[5px] border border-zinc-200 reveal transition-[translate,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <div class="flex items-center gap-3 mb-4"><i data-lucide="database" class="w-5 h-5 text-emerald-600"></i><h3 class="text-lg font-semibold text-zinc-900">Databases</h3></div>
+        <div class="flex flex-wrap gap-2">
+          <span class="tech-badge" style="--c:#CC2927"><i data-lucide="database" class="w-3.5 h-3.5"></i>SQL Server</span>
+          <span class="tech-badge" style="--c:#4169E1"><img src="assets/icons/postgresql.svg" alt="" class="w-3.5 h-3.5">PostgreSQL</span>
+          <span class="tech-badge" style="--c:#10B981"><i data-lucide="table-2" class="w-3.5 h-3.5"></i>Data modelling</span>
+        </div>
+      </div>
+      <div class="tech-card bg-white p-6 rounded-[5px] border border-zinc-200 reveal transition-[translate,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <div class="flex items-center gap-3 mb-4"><i data-lucide="cloud" class="w-5 h-5 text-emerald-600"></i><h3 class="text-lg font-semibold text-zinc-900">Cloud &amp; DevOps</h3></div>
+        <div class="flex flex-wrap gap-2">
+          <span class="tech-badge" style="--c:#FF9900"><i data-lucide="cloud" class="w-3.5 h-3.5"></i>AWS</span>
+          <span class="tech-badge" style="--c:#844FBA"><img src="assets/icons/terraform.svg" alt="" class="w-3.5 h-3.5">Terraform</span>
+          <span class="tech-badge" style="--c:#2088FF"><img src="assets/icons/githubactions.svg" alt="" class="w-3.5 h-3.5">GitHub Actions</span>
+          <span class="tech-badge" style="--c:#F05032"><img src="assets/icons/git.svg" alt="" class="w-3.5 h-3.5">Git</span>
+          <span class="tech-badge" style="--c:#10B981"><i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>CI/CD</span>
+        </div>
+      </div>
+      <div class="tech-card bg-white p-6 rounded-[5px] border border-zinc-200 reveal transition-[translate,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <div class="flex items-center gap-3 mb-4"><i data-lucide="network" class="w-5 h-5 text-emerald-600"></i><h3 class="text-lg font-semibold text-zinc-900">Architecture</h3></div>
+        <div class="flex flex-wrap gap-2">
+          <span class="tech-badge" style="--c:#10B981">Microservices</span>
+          <span class="tech-badge" style="--c:#10B981">Distributed Systems</span>
+          <span class="tech-badge" style="--c:#10B981">System Design</span>
+          <span class="tech-badge" style="--c:#10B981">API Design</span>
+        </div>
+      </div>
+      <div class="tech-card bg-white p-6 rounded-[5px] border border-zinc-200 reveal transition-[translate,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <div class="flex items-center gap-3 mb-4"><i data-lucide="sparkles" class="w-5 h-5 text-emerald-600"></i><h3 class="text-lg font-semibold text-zinc-900">Specialties</h3></div>
+        <div class="flex flex-wrap gap-2">
+          <span class="tech-badge" style="--c:#71717A">Clean Code</span>
+          <span class="tech-badge" style="--c:#71717A">Technical Leadership</span>
+          <span class="tech-badge" style="--c:#71717A">Mentoring</span>
+          <span class="tech-badge" style="--c:#71717A">Healthcare Tech</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== EXPERIENCE ============================== -->
+<section id="experience" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-16 reveal">
+      <p class="text-emerald-600 font-semibold tracking-wide uppercase text-sm mb-3">Experience</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-zinc-900 mb-4">My Professional Journey</h2>
+      <p class="text-zinc-600 text-lg max-w-2xl">12+ years designing and delivering enterprise software, growing from hands-on engineering into architecture and technical leadership.</p>
+    </div>
+    <div class="relative">
+      <div class="absolute left-[27px] sm:left-[35px] top-2 bottom-2 w-0.5 bg-emerald-200"></div>
+      <div class="absolute left-[28px] sm:left-[36px] bottom-[2px] -translate-x-1/2 w-3 h-3 rounded-full bg-emerald-500 ring-4 ring-emerald-100 reveal-pop"></div>
+      <div class="space-y-10">
+
+        <div class="relative flex gap-4 sm:gap-6 reveal">
+          <div class="relative z-10 w-14 h-14 sm:w-[70px] sm:h-[70px] bg-white border-2 border-emerald-500 rounded-[5px] flex items-center justify-center p-2 shadow-sm flex-shrink-0 pulse-ring transition-[translate,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-md"><img src="assets/img/companies/greenway-health.png" alt="Greenway Health logo" class="w-full h-full object-contain rounded-[3px]" loading="lazy"></div>
+          <div class="flex-1 pb-2">
+            <span class="text-emerald-600 font-semibold text-sm">Nov 2021 – Present</span>
+            <h3 class="text-lg sm:text-xl font-bold text-zinc-800 mt-1">Principal Software Engineer</h3>
+            <h4 class="text-emerald-600 font-semibold mb-3">Greenway Health</h4>
+            <ul class="text-zinc-600 text-sm space-y-2">
+              <li>• Designing and delivering scalable healthcare technology solutions across services, APIs, databases and distributed systems.</li>
+              <li>• Driving architecture and system-design decisions for enterprise-scale products.</li>
+            </ul>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="bg-emerald-50 text-emerald-700 text-xs px-2.5 py-1 rounded-[5px] font-medium">.NET</span>
+              <span class="bg-emerald-50 text-emerald-700 text-xs px-2.5 py-1 rounded-[5px] font-medium">C#</span>
+              <span class="bg-emerald-50 text-emerald-700 text-xs px-2.5 py-1 rounded-[5px] font-medium">Microservices</span>
+              <span class="bg-emerald-50 text-emerald-700 text-xs px-2.5 py-1 rounded-[5px] font-medium">System Design</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative flex gap-4 sm:gap-6 reveal">
+          <div class="relative z-10 w-14 h-14 sm:w-[70px] sm:h-[70px] bg-white border-2 border-zinc-200 rounded-[5px] flex items-center justify-center p-2 shadow-sm flex-shrink-0 transition-[translate,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-md"><img src="assets/img/companies/emids.png" alt="emids logo" class="w-full h-full object-contain rounded-[3px]" loading="lazy"></div>
+          <div class="flex-1 pb-2">
+            <span class="text-zinc-500 font-semibold text-sm">Feb 2018 – Nov 2021</span>
+            <h3 class="text-lg sm:text-xl font-bold text-zinc-800 mt-1">Associate Team Lead · Senior Software Engineer</h3>
+            <h4 class="text-emerald-600 font-semibold mb-3">emids</h4>
+            <ul class="text-zinc-600 text-sm space-y-2">
+              <li>• Led technical initiatives and built reliable software for healthcare-focused products.</li>
+              <li>• Mentored engineers and coordinated delivery across the team.</li>
+            </ul>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="bg-emerald-50 text-emerald-700 text-xs px-2.5 py-1 rounded-[5px] font-medium">ASP.NET Core</span>
+              <span class="bg-emerald-50 text-emerald-700 text-xs px-2.5 py-1 rounded-[5px] font-medium">REST APIs</span>
+              <span class="bg-emerald-50 text-emerald-700 text-xs px-2.5 py-1 rounded-[5px] font-medium">SQL Server</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative flex gap-4 sm:gap-6 reveal">
+          <div class="relative z-10 w-14 h-14 sm:w-[70px] sm:h-[70px] bg-white border-2 border-zinc-200 rounded-[5px] flex items-center justify-center p-2 shadow-sm flex-shrink-0 transition-[translate,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-md"><img src="assets/img/companies/infosys.svg" alt="Infosys logo" class="w-full h-full object-contain rounded-[3px]" loading="lazy"></div>
+          <div class="flex-1 pb-2">
+            <span class="text-zinc-500 font-semibold text-sm">Feb 2014 – Feb 2018</span>
+            <h3 class="text-lg sm:text-xl font-bold text-zinc-800 mt-1">Senior System Engineer · System Engineer</h3>
+            <h4 class="text-emerald-600 font-semibold mb-3">Infosys</h4>
+            <ul class="text-zinc-600 text-sm space-y-2">
+              <li>• Built a strong foundation in enterprise application development, systems thinking and delivery.</li>
+            </ul>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="bg-emerald-50 text-emerald-700 text-xs px-2.5 py-1 rounded-[5px] font-medium">C#</span>
+              <span class="bg-emerald-50 text-emerald-700 text-xs px-2.5 py-1 rounded-[5px] font-medium">SQL</span>
+              <span class="bg-emerald-50 text-emerald-700 text-xs px-2.5 py-1 rounded-[5px] font-medium">Enterprise Software</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ARTICLES ============================== -->
+<section id="articles" class="py-20 bg-zinc-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-16 reveal">
+      <p class="text-emerald-600 font-semibold tracking-wide uppercase text-sm mb-3">Articles</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-zinc-900 mb-4">Latest Articles</h2>
+      <p class="text-zinc-600 text-lg">Practical notes on system design, cloud architecture and the engineering decisions behind reliable software.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Replace each card's href, date, title and summary when an article is published -->
+      <article class="bg-white border border-zinc-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105 block group reveal">
+        <div class="w-full h-48 overflow-hidden article-cover" style="--c1:#064e3b;--c2:#10b981">
+          <div class="w-full h-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300"><i data-lucide="network" class="w-16 h-16 text-white/80"></i></div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3"><i data-lucide="book-open" class="w-5 h-5 text-emerald-600"></i><span class="text-sm text-zinc-500">Coming soon</span></div>
+          <h3 class="text-xl font-bold text-zinc-800 mb-3 group-hover:text-emerald-600 transition-colors">Designing Microservices That Stay Simple</h3>
+          <p class="text-zinc-600 mb-4 leading-relaxed line-clamp-3">Service boundaries, data ownership and the trade-offs that keep a distributed system understandable as it grows.</p>
+          <div class="flex flex-wrap gap-2 mb-4"><span class="bg-zinc-100 text-zinc-600 text-xs px-2.5 py-1 rounded-full">system design</span><span class="bg-zinc-100 text-zinc-600 text-xs px-2.5 py-1 rounded-full">microservices</span></div>
+          <div class="flex items-center gap-2 text-emerald-600 font-medium"><span class="text-sm">In draft</span><i data-lucide="pen-line" class="w-4 h-4"></i></div>
+        </div>
+      </article>
+      <article class="bg-white border border-zinc-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105 block group reveal">
+        <div class="w-full h-48 overflow-hidden article-cover" style="--c1:#7c2d12;--c2:#f59e0b">
+          <div class="w-full h-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300"><i data-lucide="cloud" class="w-16 h-16 text-white/80"></i></div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3"><i data-lucide="book-open" class="w-5 h-5 text-emerald-600"></i><span class="text-sm text-zinc-500">Coming soon</span></div>
+          <h3 class="text-xl font-bold text-zinc-800 mb-3 group-hover:text-emerald-600 transition-colors">Deploying a .NET API to AWS with Terraform</h3>
+          <p class="text-zinc-600 mb-4 leading-relaxed line-clamp-3">A small, real deployment end to end: infrastructure as code, CI/CD with GitHub Actions, and what I learned along the way.</p>
+          <div class="flex flex-wrap gap-2 mb-4"><span class="bg-zinc-100 text-zinc-600 text-xs px-2.5 py-1 rounded-full">aws</span><span class="bg-zinc-100 text-zinc-600 text-xs px-2.5 py-1 rounded-full">terraform</span></div>
+          <div class="flex items-center gap-2 text-emerald-600 font-medium"><span class="text-sm">In draft</span><i data-lucide="pen-line" class="w-4 h-4"></i></div>
+        </div>
+      </article>
+      <article class="bg-white border border-zinc-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105 block group reveal">
+        <div class="w-full h-48 overflow-hidden article-cover" style="--c1:#312e81;--c2:#8b5cf6">
+          <div class="w-full h-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300"><i data-lucide="users" class="w-16 h-16 text-white/80"></i></div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3"><i data-lucide="book-open" class="w-5 h-5 text-emerald-600"></i><span class="text-sm text-zinc-500">Coming soon</span></div>
+          <h3 class="text-xl font-bold text-zinc-800 mb-3 group-hover:text-emerald-600 transition-colors">Lessons From a Decade of Leading Engineers</h3>
+          <p class="text-zinc-600 mb-4 leading-relaxed line-clamp-3">On code reviews, mentoring and building teams that ship reliable software without burning out.</p>
+          <div class="flex flex-wrap gap-2 mb-4"><span class="bg-zinc-100 text-zinc-600 text-xs px-2.5 py-1 rounded-full">leadership</span><span class="bg-zinc-100 text-zinc-600 text-xs px-2.5 py-1 rounded-full">mentoring</span></div>
+          <div class="flex items-center gap-2 text-emerald-600 font-medium"><span class="text-sm">In draft</span><i data-lucide="pen-line" class="w-4 h-4"></i></div>
+        </div>
+      </article>
+    </div>
+    <div class="text-center mt-12">
+      <a href="https://github.com/PritamDe166" target="_blank" rel="noopener" class="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-[5px] font-semibold transition-all duration-200 transform hover:scale-105 shadow-md">
+        <span>Follow My Work</span><i data-lucide="arrow-right" class="w-5 h-5"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== GITHUB ============================== -->
+<section id="github" class="py-20 bg-black" data-github-user="PritamDe166">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-16 reveal">
+      <p class="text-emerald-400 font-semibold tracking-wide uppercase text-sm mb-3">GitHub Overview</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">GitHub Stats</h2>
+      <p class="text-zinc-300 text-lg max-w-2xl">A live snapshot of my public repositories, languages and contribution activity.</p>
+    </div>
+    <div class="space-y-12">
+      <div>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-12">
+          <img src="https://github.com/PritamDe166.png?size=128" alt="Pritam De on GitHub" class="w-16 h-16 rounded-full border-2 border-emerald-500" loading="lazy">
+          <div>
+            <a href="https://github.com/PritamDe166" target="_blank" rel="noopener" class="text-emerald-400 font-semibold hover:text-emerald-300 hover:underline transition-colors inline-flex items-center gap-1.5">@PritamDe166 <i data-lucide="external-link" class="w-4 h-4"></i></a>
+            <p id="gh-bio" class="text-zinc-400 text-sm mt-1">Clean code · thoughtful systems</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-6 mb-8">
+          <div><div class="flex items-center gap-2 mb-2"><i data-lucide="book-marked" class="w-5 h-5 text-emerald-400"></i></div><div class="text-2xl font-bold text-white" data-gh="repos">—</div><div class="text-xs sm:text-sm text-zinc-400">Repositories</div></div>
+          <div class="md:pl-6 md:border-l border-zinc-800"><div class="flex items-center gap-2 mb-2"><i data-lucide="star" class="w-5 h-5 text-emerald-400"></i></div><div class="text-2xl font-bold text-white" data-gh="stars">—</div><div class="text-xs sm:text-sm text-zinc-400">Total Stars</div></div>
+          <div class="md:pl-6 md:border-l border-zinc-800"><div class="flex items-center gap-2 mb-2"><i data-lucide="git-fork" class="w-5 h-5 text-emerald-400"></i></div><div class="text-2xl font-bold text-white" data-gh="forks">—</div><div class="text-xs sm:text-sm text-zinc-400">Forks</div></div>
+          <div class="md:pl-6 md:border-l border-zinc-800"><div class="flex items-center gap-2 mb-2"><i data-lucide="users" class="w-5 h-5 text-emerald-400"></i></div><div class="text-2xl font-bold text-white" data-gh="followers">—</div><div class="text-xs sm:text-sm text-zinc-400">Followers</div></div>
+          <div class="md:pl-6 md:border-l border-zinc-800"><div class="flex items-center gap-2 mb-2"><i data-lucide="calendar" class="w-5 h-5 text-emerald-400"></i></div><div class="text-2xl font-bold text-white" data-gh="since">—</div><div class="text-xs sm:text-sm text-zinc-400">On GitHub Since</div></div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Top Languages</h3>
+        <div id="gh-lang-bar" class="flex w-full h-2.5 rounded-full overflow-hidden mb-4 bg-zinc-800"></div>
+        <div id="gh-lang-list" class="grid grid-cols-2 sm:grid-cols-4 gap-3"></div>
+      </div>
+
+      <div>
+        <h3 class="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Featured Work</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <a href="https://dwn2n2k97ubpf.cloudfront.net/" target="_blank" rel="noopener" class="group block bg-zinc-900 border border-zinc-800 rounded-[5px] p-6 hover:border-emerald-500 transition-colors">
+            <div class="flex items-center justify-between mb-3"><span class="text-white font-semibold text-lg group-hover:text-emerald-400 transition-colors">Interactive Explainers</span><i data-lucide="arrow-up-right" class="w-5 h-5 text-zinc-500 group-hover:text-emerald-400"></i></div>
+            <p class="text-zinc-400 text-sm mb-4">Interactive learning platform for complex technical concepts — system design, AWS, Python and more.</p>
+            <div class="flex items-center gap-4 text-xs text-zinc-500"><span class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>Live project</span><span>HTML / CSS / JS</span></div>
+          </a>
+          <a href="https://github.com/PritamDe166/Interactive_Learning" target="_blank" rel="noopener" class="group block bg-zinc-900 border border-zinc-800 rounded-[5px] p-6 hover:border-emerald-500 transition-colors">
+            <div class="flex items-center justify-between mb-3"><span class="text-white font-semibold text-lg group-hover:text-emerald-400 transition-colors">Interactive_Learning</span><i data-lucide="arrow-up-right" class="w-5 h-5 text-zinc-500 group-hover:text-emerald-400"></i></div>
+            <p class="text-zinc-400 text-sm mb-4">Source for the explainers above, plus an AWS learning lab with small, real deployments built with Terraform and CI/CD.</p>
+            <div class="flex items-center gap-4 text-xs text-zinc-500"><span class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-sky-400"></span>Public repository</span><span>HTML / CSS / JS</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Contribution Activity</h3>
+        <div class="overflow-x-auto bg-zinc-950 border border-zinc-800 rounded-[5px] p-4">
+          <img src="https://ghchart.rshah.org/10b981/PritamDe166" alt="GitHub contribution chart for PritamDe166" class="min-w-[600px] w-full" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CONTACT ============================== -->
+<section id="contact" class="py-20 bg-zinc-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-16 reveal">
+      <p class="text-emerald-600 font-semibold tracking-wide uppercase text-sm mb-3">Contact</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-zinc-900 mb-4">Let's Work Together</h2>
+      <p class="text-zinc-600 text-lg max-w-2xl">Have a problem worth solving, a role to discuss, or just want to talk architecture? Drop me a message.</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+      <div class="lg:order-2 space-y-6 sm:space-y-8 reveal [animation-delay:0.2s]">
+        <div>
+          <h3 class="text-lg sm:text-xl font-bold text-zinc-800 mb-4 sm:mb-6">Get in touch</h3>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3 sm:gap-4"><i data-lucide="mail" class="w-5 h-5 text-emerald-600 flex-shrink-0"></i><div class="min-w-0"><p class="text-zinc-500 text-xs sm:text-sm">Email</p><a href="mailto:pritamde166@gmail.com" class="text-zinc-800 hover:text-emerald-600 transition-colors font-medium text-sm sm:text-base break-all">pritamde166@gmail.com</a></div></div>
+            <div class="flex items-center gap-3 sm:gap-4"><svg class="w-5 h-5 text-emerald-600 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><div class="min-w-0"><p class="text-zinc-500 text-xs sm:text-sm">LinkedIn</p><a href="https://www.linkedin.com/in/pritam-d-93459a199/" target="_blank" rel="me noopener" class="text-zinc-800 hover:text-emerald-600 transition-colors font-medium text-sm sm:text-base break-all">linkedin.com/in/pritam-d</a></div></div>
+            <div class="flex items-center gap-3 sm:gap-4"><svg class="w-5 h-5 text-emerald-600 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><div class="min-w-0"><p class="text-zinc-500 text-xs sm:text-sm">GitHub</p><a href="https://github.com/PritamDe166" target="_blank" rel="noopener" class="text-zinc-800 hover:text-emerald-600 transition-colors font-medium text-sm sm:text-base break-all">github.com/PritamDe166</a></div></div>
+          </div>
+        </div>
+        <div class="bg-white border border-zinc-200 rounded-2xl p-6">
+          <h3 class="text-lg font-bold text-zinc-800 mb-4">What I can help with</h3>
+          <ul class="space-y-3 text-zinc-600 text-sm">
+            <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 flex-shrink-0"></i>Architecture and system-design reviews</li>
+            <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 flex-shrink-0"></i>.NET APIs, microservices and data design</li>
+            <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 flex-shrink-0"></i>Technical leadership and mentoring</li>
+          </ul>
+        </div>
+      </div>
+      <div class="lg:order-1 bg-white p-4 sm:p-6 md:p-8 rounded-2xl border border-zinc-200 shadow-lg reveal [animation-delay:0.4s]">
+        <h3 class="text-lg sm:text-xl font-bold text-zinc-800 mb-4 sm:mb-6">Drop me a message</h3>
+        <!-- No backend yet: this opens the visitor's email app. Swap the handler in main.js for an API endpoint (e.g. API Gateway + Lambda) later. -->
+        <form id="contact-form" class="space-y-6" novalidate>
+          <div>
+            <label for="cf-name" class="block text-sm font-medium text-zinc-700 mb-2">Name</label>
+            <input id="cf-name" name="name" type="text" required class="w-full bg-zinc-50 border rounded-lg px-4 py-3 text-zinc-800 focus:outline-none focus:ring-1 transition-colors border-zinc-300 focus:border-emerald-600 focus:ring-emerald-600" placeholder="Your name">
+          </div>
+          <div>
+            <label for="cf-email" class="block text-sm font-medium text-zinc-700 mb-2">Email</label>
+            <input id="cf-email" name="email" type="email" required class="w-full bg-zinc-50 border rounded-lg px-4 py-3 text-zinc-800 focus:outline-none focus:ring-1 transition-colors border-zinc-300 focus:border-emerald-600 focus:ring-emerald-600" placeholder="you@example.com">
+          </div>
+          <div>
+            <label for="cf-subject" class="block text-sm font-medium text-zinc-700 mb-2">Subject</label>
+            <input id="cf-subject" name="subject" type="text" class="w-full bg-zinc-50 border rounded-lg px-4 py-3 text-zinc-800 focus:outline-none focus:ring-1 transition-colors border-zinc-300 focus:border-emerald-600 focus:ring-emerald-600" placeholder="What's it about?">
+          </div>
+          <div>
+            <label for="cf-message" class="block text-sm font-medium text-zinc-700 mb-2">Message</label>
+            <textarea id="cf-message" name="message" rows="5" required class="w-full bg-zinc-50 border rounded-lg px-4 py-3 text-zinc-800 focus:outline-none focus:ring-1 transition-colors border-zinc-300 focus:border-emerald-600 focus:ring-emerald-600 resize-y" placeholder="Tell me a little about it…"></textarea>
+          </div>
+          <p id="cf-error" class="hidden text-sm text-red-600">Please fill in your name, a valid email and a message.</p>
+          <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-lg font-semibold transition-colors shadow-md inline-flex items-center justify-center gap-2">
+            Send Message <i data-lucide="send" class="w-4 h-4"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="bg-zinc-900 border-t-4 border-emerald-600 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row gap-10 mb-12">
+      <div class="lg:flex-[3]">
+        <a href="#home" class="inline-block text-2xl font-extrabold tracking-tight text-white mb-4">Pritam De<span class="text-emerald-400">.</span></a>
+        <p class="text-zinc-400 text-sm leading-relaxed max-w-md">Pritam De is a Principal Software Engineer with 12+ years building scalable, reliable enterprise software with .NET, microservices and AWS.</p>
+      </div>
+      <div class="lg:flex-1">
+        <h4 class="text-base sm:text-lg font-semibold text-white mb-4 sm:mb-6">Links</h4>
+        <div class="space-y-2 sm:space-y-3">
+          <a href="#home" class="block text-zinc-400 hover:text-emerald-400 transition-colors capitalize text-sm">home</a>
+          <a href="#about" class="block text-zinc-400 hover:text-emerald-400 transition-colors capitalize text-sm">about</a>
+          <a href="#technologies" class="block text-zinc-400 hover:text-emerald-400 transition-colors capitalize text-sm">technologies</a>
+          <a href="#experience" class="block text-zinc-400 hover:text-emerald-400 transition-colors capitalize text-sm">experience</a>
+          <a href="#articles" class="block text-zinc-400 hover:text-emerald-400 transition-colors capitalize text-sm">articles</a>
+          <a href="#github" class="block text-zinc-400 hover:text-emerald-400 transition-colors text-sm">GitHub</a>
+          <a href="#contact" class="block text-zinc-400 hover:text-emerald-400 transition-colors capitalize text-sm">contact</a>
+        </div>
+      </div>
+      <div class="lg:flex-1">
+        <h4 class="text-base sm:text-lg font-semibold text-white mb-4 sm:mb-6">Resources</h4>
+        <div class="space-y-2 sm:space-y-3">
+          <a href="https://dwn2n2k97ubpf.cloudfront.net/" target="_blank" rel="noopener" class="block text-zinc-400 hover:text-emerald-400 transition-colors text-sm">Interactive Explainers</a>
+          <a href="https://github.com/PritamDe166/Interactive_Learning" target="_blank" rel="noopener" class="block text-zinc-400 hover:text-emerald-400 transition-colors text-sm">Interactive_Learning repo</a>
+          <a href="#articles" class="block text-zinc-400 hover:text-emerald-400 transition-colors text-sm">Articles</a>
+        </div>
+      </div>
+      <div class="lg:flex-1">
+        <h4 class="text-base sm:text-lg font-semibold text-white mb-4 sm:mb-6">Connect</h4>
+        <div class="space-y-2 sm:space-y-3">
+          <a href="https://github.com/PritamDe166" target="_blank" rel="noopener" class="flex items-center gap-2 text-zinc-400 hover:text-emerald-400 transition-colors text-sm"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub</a>
+          <a href="https://www.linkedin.com/in/pritam-d-93459a199/" target="_blank" rel="me noopener" class="flex items-center gap-2 text-zinc-400 hover:text-emerald-400 transition-colors text-sm"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+          <a href="mailto:pritamde166@gmail.com" class="flex items-center gap-2 text-zinc-400 hover:text-emerald-400 transition-colors text-sm"><i data-lucide="mail" class="w-4 h-4"></i>Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-zinc-800 pt-6 sm:pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-zinc-500 text-xs sm:text-sm text-center md:text-left">© <span id="year">2026</span> Pritam De. All rights reserved.</p>
+        <div class="flex items-center gap-6 text-xs sm:text-sm">
+          <span class="text-zinc-500">Clean code · thoughtful systems</span>
+          <a href="#home" class="text-zinc-400 hover:text-emerald-400 inline-flex items-center gap-1">Back to top <i data-lucide="arrow-up" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/vendor/lucide.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

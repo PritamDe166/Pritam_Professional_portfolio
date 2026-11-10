@@ -1,0 +1,2 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
+:root{--bg:#ffffff;--dark:#111214;--dark-2:#08090a;--panel:#ffffff;--panel-soft:#f7f8f7;--line:#e2e5e3;--fg:#17191b;--soft:#555b60;--muted:#747a7f;--faint:#a0a6aa;--accent:#16a34a;--accent-soft:#e9f8ee;--cyan:#087f42;--ink:#ffffff;--display:"Inter","Segoe UI",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;color-scheme:light}
